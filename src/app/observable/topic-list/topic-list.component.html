@@ -1,0 +1,6 @@
+<h6>Observables</h6>
+<p class="topicList">
+  <a [routerLink]="[ item.url ]" *ngFor="let item of topicList; let last = last;">
+    &bull; {{item.topic}}
+  </a>
+</p>

@@ -1,0 +1,331 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Poppins:wght@200&display=swap")
+
+*
+    margin: 0
+    padding: 0
+
+section
+    height: 100vh
+    width: 100%
+    overflow: hidden
+
+nav
+    position: fixed
+    width: 100%
+    top: 0
+    display: flex
+    align-items: center
+    justify-content: space-between
+    font-family: "Poppins", sans-serif
+    font-weight: bolder
+    color: #232323
+    z-index: 1
+
+.middle
+    font-family: "Oswald", sans-serif
+    text-align: center
+    padding-top: 10px
+    padding-bottom: 10px
+    letter-spacing: 1px
+
+ul
+    list-style: none
+
+li
+    display: inline
+    margin-right: 20px
+    margin-left: 20px
+    cursor: pointer
+    z-index: 999
+
+.container
+    position: relative
+    height: 100%
+    width: 100%
+
+.title
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    position: fixed
+    z-index: -1
+    font-family: "Oswald", sans-serif
+    font-size: 80px
+    letter-spacing: 1px
+    transform: scaleY(1.7)
+    -webkit-transform: scaleY(1.7)
+    -moz-transform: scaleY(1.7)
+    -ms-transform: scaleY(1.7)
+    -o-transform: scaleY(1.7)
+
+.black
+    color: #232323
+
+.outlined
+    color: transparent
+    -webkit-text-stroke: 2px #232323
+    opacity: 0.8
+
+.bg_image
+    width: 100%
+    height: 100%
+    top: 0
+    z-index: -2
+    position: fixed
+    background: url("../../../assets/Destination_Freak/bg.jpg")
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center bottom
+
+.desc
+    position: fixed
+    bottom: 0
+    height: 250px
+    width: 45%
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+
+.sub_title
+    color: white
+    font-family: "Poppins", sans-serif
+    padding-bottom: 25px
+    width: 65%
+    overflow: hidden
+    align-self: flex-end
+
+.bottom_nav
+    width: 100%
+    height: 80px
+    background: #cac5c1
+    display: flex
+    align-items: center
+    justify-content: flex-end
+
+    & h4
+        font-family: "Oswald", sans-serif
+        transform: scaleY(1.7) translateX(-20px)
+        -webkit-transform: scaleY(1.7) translateX(-20px)
+        -moz-transform: scaleY(1.7) translateX(-20px)
+        -ms-transform: scaleY(1.7) translateX(-20px)
+        -o-transform: scaleY(1.7) translateX(-20px)
+        color: #232323
+        transition: 0.7s all
+        -webkit-transition: 0.7s all
+        -moz-transition: 0.7s all
+        -ms-transition: 0.7s all
+        -o-transition: 0.7s all
+
+.circle
+    width: 20px
+    height: 20px
+    border-radius: 50%
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    -ms-border-radius: 50%
+    -o-border-radius: 50%
+    border: 1px solid #232123
+    margin: 0 20px
+    cursor: pointer
+
+    &::before
+        content: ""
+        display: block
+        height: 1.5px
+        width: 15px
+        background-color: #232323
+        margin-top: 46%
+        margin-left: -50%
+
+    &::after
+        content: ""
+        display: block
+        height: 50px
+        width: 50px
+        opacity: 0.2
+        background-color: #232323
+        margin-left: -200px
+        margin-top: -138%
+        border-radius: 50%
+        -webkit-border-radius: 50%
+        -moz-border-radius: 50%
+        -ms-border-radius: 50%
+        -o-border-radius: 50%
+        transition: 0.7s all
+        -webkit-transition: 0.7s all
+        -moz-transition: 0.7s all
+        -ms-transition: 0.7s all
+        -o-transition: 0.7s all
+        transition-timing-function: ease
+
+    .bottom_nav:hover::after &
+        transition: 0.7s all
+        -webkit-transition: 0.7s all
+        -moz-transition: 0.7s all
+        -ms-transition: 0.7s all
+        -o-transition: 0.7s all
+        transition-timing-function: ease
+        margin-left: -15px
+
+.bottom_nav:hover h4
+    transform: scaleY(1.7) translateX(0px)
+    -webkit-transform: scaleY(1.7) translateX(0px)
+    -moz-transform: scaleY(1.7) translateX(0px)
+    -ms-transform: scaleY(1.7) translateX(0px)
+    -o-transform: scaleY(1.7) translateX(0px)
+
+.grid
+    display: none
+    grid-template-columns: repeat(12, 1fr)
+    grid-template-rows: repeat(12, 1fr)
+    grid-column: 1 / span 12
+    grid-row: 1 / span 12
+    width: 100%
+    height: 100%
+    grid-row-gap: 2px
+    grid-column-gap: 2px
+    position: absolute
+    top: 0
+
+.imgs
+    grid-column: 3/span 4
+    grid-row: 3/span 8
+    width: 100%
+    height: 0%
+    overflow: hidden
+    position: relative
+    top: 100%
+    transform-origin: top
+    transform: rotateX(180deg)
+    -webkit-transform: rotateX(180deg)
+    -moz-transform: rotateX(180deg)
+    -ms-transform: rotateX(180deg)
+    -o-transform: rotateX(180deg)
+
+.first_img
+    height: 600px
+    background: url("../../../assets/Destination_Freak/first.png")
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+
+.imgs_2
+    grid-column: 7/span 2
+    grid-row: 3/span 5
+    width: 100%
+    height: 0%
+    overflow: hidden
+    position: relative
+    top: 100%
+    transform-origin: top
+    transform: rotateX(180deg)
+    -webkit-transform: rotateX(180deg)
+    -moz-transform: rotateX(180deg)
+    -ms-transform: rotateX(180deg)
+    -o-transform: rotateX(180deg)
+
+.second_img
+    height: 400px
+    background: url("../../../assets/Destination_Freak/second.png")
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+
+.imgs_3
+    grid-column: 7/span 2
+    grid-row: 8/span 3
+    width: 100%
+    height: 0%
+    overflow: hidden
+    position: relative
+    top: 100%
+    transform-origin: top
+    transform: rotateX(180deg)
+    -webkit-transform: rotateX(180deg)
+    -moz-transform: rotateX(180deg)
+    -ms-transform: rotateX(180deg)
+    -o-transform: rotateX(180deg)
+
+.third_img
+    height: 300px
+    background: url("../../../assets/Destination_Freak/third.png")
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+
+.imgs_4
+    grid-column: 9/span 2
+    grid-row: 3/span 8
+    width: 100%
+    height: 0%
+    overflow: hidden
+    position: relative
+    top: 100%
+    transform-origin: top
+    transform: rotateX(180deg)
+    -webkit-transform: rotateX(180deg)
+    -moz-transform: rotateX(180deg)
+    -ms-transform: rotateX(180deg)
+    -o-transform: rotateX(180deg)
+
+.forth_img
+    height: 600px
+    background: url("../../../assets/Destination_Freak/forth.png")
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+
+.destination
+    grid-column: 2/span 2
+    grid-row: 10/span 1
+    z-index: 1
+    font-family: "Oswald", sans-serif
+    font-size: 30px
+    letter-spacing: 1px
+    transform: scaleY(1.5) translateY(28px)
+    -webkit-transform: scaleY(1.5) translateY(28px)
+    -moz-transform: scaleY(1.5) translateY(28px)
+    -ms-transform: scaleY(1.5) translateY(28px)
+    -o-transform: scaleY(1.5) translateY(28px)
+    color: #fff
+    opacity: 0
+
+.white_outline
+    -webkit-text-stroke: 1px #fff
+
+.img_wrapper
+    position: absolute
+    top: 0
+    width: 100%
+
+    cursor: pointer
+    transition: .7s all
+    -webkit-transition: .7s all
+    -moz-transition: .7s all
+    -ms-transition: .7s all
+    -o-transition: .7s all
+
+    transform: rotateX(180deg)
+    -webkit-transform: rotateX(180deg)
+    -moz-transform: rotateX(180deg)
+    -ms-transform: rotateX(180deg)
+    -o-transform: rotateX(180deg)
+
+    &:hover
+        transform: scale(1.1) rotateX(180deg)
+        -webkit-transform: scale(1.1) rotateX(180deg)
+        -moz-transform: scale(1.1) rotateX(180deg)
+        -ms-transform: scale(1.1) rotateX(180deg)
+        -o-transform: scale(1.1) rotateX(180deg)
+
+.forest
+    position: absolute
+    top: 50vh
+    width: 100%
+    height: 100%
+    z-index: -1
+
+    & img
+        width: 100%

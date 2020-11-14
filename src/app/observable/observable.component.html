@@ -1,0 +1,14 @@
+<div class="container-fluid py-3">
+  <h3>Observable</h3>
+  <hr>
+  <div class="row">
+    <div class="col-md-3 mb-3" *ngFor="let item of rxjsGuideRoute">
+      <div class="card" [routerLink]="[ item.url ]">
+        <div class="card-body">
+          <h6>{{item.topic}}</h6>
+          <p class="small">{{item.type}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

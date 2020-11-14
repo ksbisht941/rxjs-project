@@ -1,0 +1,62 @@
+<div class="my-3">
+  <h3>filter()</h3>
+  <br>
+  <div class="row">
+    <div class="col-md-4">
+      <strong>Ex - 01 (filter())</strong>
+      <hr>
+      <p class="small bg-light py-2 px-3 border rounded">
+        <strong>Filter: </strong> by length
+      </p>
+      <!-- <ul id="elContainer1"></ul> -->
+      <table class="table">
+        <tr>
+          <th>Topic</th>
+          <th>Type</th>
+        </tr>
+        <tr *ngFor="let item of data1">
+          <td> {{item.topic}}</td>
+          <td>{{item.type}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="col-md-4">
+      <strong>Ex - 02 (filter())</strong>
+      <hr>
+      <p class="small bg-light py-2 px-3 border rounded">
+        <strong>Filter: </strong> by type
+      </p>
+      <!-- <ul id="elContainer1"></ul> -->
+      <table class="table">
+        <tr>
+          <th>Topic</th>
+          <th>Type</th>
+        </tr>
+        <tr *ngFor="let item of data2">
+            <td> {{item.topic}}</td>
+            <td>{{item.type}}</td>
+          </tr>
+      </table>
+    </div>
+
+    <div class="col-md-4">
+      <strong>Ex - 03 (filter())</strong>
+      <hr>
+      <p class="small bg-light py-2 px-3 border rounded">
+        <strong>Filter: </strong> by nth item
+      </p>
+      <!-- <ul id="elContainer1"></ul> -->
+      <table class="table">
+        <tr>
+            <th>Topic</th>
+            <th>Type</th>
+        </tr>
+        <tr *ngFor="let item of data3">
+            <td> {{item.topic}}</td>
+            <td>{{item.type}}</td>
+          </tr>
+      </table>
+    </div>
+  </div>
+</div>
