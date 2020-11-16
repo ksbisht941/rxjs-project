@@ -11,11 +11,16 @@ import { MergemapComponent } from './mergemap/mergemap.component';
 import { MergeComponent } from './merge/merge.component';
 import { MapComponent } from './map/map.component';
 import { PluckComponent } from './pluck/pluck.component';
-import { TopicListComponent } from './topic-list/topic-list.component';
 import { FilterComponent } from './filter/filter.component';
 import { TapComponent } from './tap/tap.component';
 import { TakeComponent } from './take/take.component';
 import { RetryComponent } from './retry/retry.component';
+import { SubjectAndBehavioursubjectComponent } from './subject-and-behavioursubject/subject-and-behavioursubject.component';
+import { ReplaySubjectComponent } from './replay-subject/replay-subject.component';
+import { Comp1Component } from './subject-and-behavioursubject/comp1/comp1.component';
+import { Comp2Component } from './subject-and-behavioursubject/comp2/comp2.component';
+import { Comp3Component } from './subject-and-behavioursubject/comp3/comp3.component';
+import { AsyncSubjectComponent } from './async-subject/async-subject.component';
 
 const routes: Routes = [
   { path: '', component: ObservableComponent },
@@ -30,6 +35,9 @@ const routes: Routes = [
   { path: 'tap', component: TapComponent },
   { path: 'take-takeLast-takeUntil', component: TakeComponent },
   { path: 'retry', component: RetryComponent },
+  { path: 'subject-and-behaviourSubject', component: SubjectAndBehavioursubjectComponent },
+  { path: 'replaySubject', component: ReplaySubjectComponent },
+  { path: 'asyncSubject', component: AsyncSubjectComponent },
   { path: 'merge', component: MergeComponent },
   { path: 'mergeMap', component: MergemapComponent },
 ];
@@ -46,11 +54,16 @@ const routes: Routes = [
     MergeComponent,
     MergemapComponent,
     PluckComponent,
-    TopicListComponent,
     FilterComponent,
     TapComponent,
     TakeComponent,
     RetryComponent,
+    SubjectAndBehavioursubjectComponent,
+    ReplaySubjectComponent,
+    Comp1Component,
+    Comp2Component,
+    Comp3Component,
+    AsyncSubjectComponent,
   ],
   imports: [CommonModule, RouterModule.forChild(routes)],
 })
