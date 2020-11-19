@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   activeRoute: string;
   rxjsGuideRoute: { topic: string; url: string; type: string; }[];
   gsapGuideRoute: { topic: string; url: string; type: string; }[];
+  exclusive: boolean = false;
 
   constructor(private _designUtility: UtilService, private router: Router) {}
 
@@ -43,5 +44,9 @@ export class AppComponent implements OnInit {
         }
       }
     });
+
+    this._designUtility.exclusive.subscribe(res => {
+      this.exclusive = res;
+    })
   }
 }

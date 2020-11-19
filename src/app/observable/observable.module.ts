@@ -17,10 +17,11 @@ import { TakeComponent } from './take/take.component';
 import { RetryComponent } from './retry/retry.component';
 import { SubjectAndBehavioursubjectComponent } from './subject-and-behavioursubject/subject-and-behavioursubject.component';
 import { ReplaySubjectComponent } from './replay-subject/replay-subject.component';
-import { Comp1Component } from './subject-and-behavioursubject/comp1/comp1.component';
-import { Comp2Component } from './subject-and-behavioursubject/comp2/comp2.component';
-import { Comp3Component } from './subject-and-behavioursubject/comp3/comp3.component';
 import { AsyncSubjectComponent } from './async-subject/async-subject.component';
+import { Comp1Component } from './comps/comp1/comp1.component';
+import { Comp2Component } from './comps/comp2/comp2.component';
+import { Comp3Component } from './comps/comp3/comp3.component';
+import { ConcatComponent } from './concat/concat.component';
 
 const routes: Routes = [
   { path: '', component: ObservableComponent },
@@ -38,6 +39,7 @@ const routes: Routes = [
   { path: 'subject-and-behaviourSubject', component: SubjectAndBehavioursubjectComponent },
   { path: 'replaySubject', component: ReplaySubjectComponent },
   { path: 'asyncSubject', component: AsyncSubjectComponent },
+  { path: 'concat', component: ConcatComponent },
   { path: 'merge', component: MergeComponent },
   { path: 'mergeMap', component: MergemapComponent },
 ];
@@ -64,6 +66,7 @@ const routes: Routes = [
     Comp2Component,
     Comp3Component,
     AsyncSubjectComponent,
+    ConcatComponent,
   ],
   imports: [CommonModule, RouterModule.forChild(routes)],
 })

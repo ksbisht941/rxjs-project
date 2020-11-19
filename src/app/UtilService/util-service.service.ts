@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
+import { AsyncSubject, BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -7,9 +7,10 @@ import { BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
 export class UtilService {
   constructor() {}
 
-  videoEmit = new ReplaySubject<string>(2, 5000);
-  userName = new BehaviorSubject<string>('Kabir');
   exclusive = new Subject<boolean>();
+  userName = new BehaviorSubject<string>('Kabir');
+  videoEmit = new ReplaySubject<string>(2, 5000);
+  asyncEmit = new AsyncSubject();
 
   rxjsGuideRoute = [
     { topic: 'FromEvent', url: '/guide/fromEvent', type: 'operator' },
@@ -19,7 +20,7 @@ export class UtilService {
       type: 'operator',
     },
     { topic: 'Of And From', url: '/guide/of-and-from', type: 'operator' },
-    { topic: 'toArray', url: '/guide/toArray', type: 'operator' },
+    { topic: 'ToArray', url: '/guide/toArray', type: 'operator' },
     {
       topic: 'Custom Observable',
       url: '/guide/custom-observable',
@@ -46,8 +47,9 @@ export class UtilService {
     },
     { topic: 'ReplaySubject', url: '/guide/replaySubject', type: 'operator' },
     { topic: 'AsyncSubject ', url: '/guide/asyncSubject', type: 'operator' },
-    { topic: 'merge', url: '/guide/merge', type: 'operator' },
-    { topic: 'mergeMap', url: '/guide/mergeMap', type: 'operator' },
+    { topic: 'Concat', url: '/guide/concat', type: 'operator' },
+    { topic: 'Merge', url: '/guide/merge', type: 'operator' },
+    { topic: 'MergeMap', url: '/guide/mergeMap', type: 'operator' },
   ];
 
   gsapGuideRoute = [

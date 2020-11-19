@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
 import { UtilService } from 'src/app/UtilService/util-service.service';
 
@@ -7,8 +7,9 @@ import { UtilService } from 'src/app/UtilService/util-service.service';
   templateUrl: './replay-subject.component.html',
   styleUrls: ['./replay-subject.component.sass'],
 })
-export class ReplaySubjectComponent implements OnInit {
+export class ReplaySubjectComponent implements OnInit, OnDestroy {
   // subscription
+  subscription1: Subscription;
   subscription2: Subscription;
   subscription3: Subscription;
 
@@ -25,8 +26,18 @@ export class ReplaySubjectComponent implements OnInit {
 
   constructor(private _designUtility: UtilService) {}
 
+  ngOnDestroy(): void {
+    this.subscription1.unsubscribe();
+    if (this.subscribeMode2) {
+      this.subscription2.unsubscribe();
+    } 
+    if (this.subscribeMode3) {
+      this.subscription3.unsubscribe();
+    }
+  }
+
   ngOnInit(): void {
-    this._designUtility.videoEmit.subscribe((res) => {
+    this.subscription1 = this._designUtility.videoEmit.subscribe((res) => {
       console.log(res);
       this.user1List.push(res);
     });

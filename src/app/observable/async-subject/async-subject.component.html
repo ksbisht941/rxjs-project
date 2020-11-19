@@ -1,18 +1,15 @@
 <div class="my-3">
-  <h2>Replay Subject</h2>
+  <h3>Async Subject</h3>
   <br>
   <div class="row">
     <div class="col">
-      <h3>{{methodInterval? 'Interval Started': 'Add Video'}}</h3>
-    </div>
-    <div class="col text-right">
-      <button class="btn btn-warning btn-sm" (click)="toggleMthod()"><strong>Toggle Method</strong></button>
+      <h5>Add Video</h5>
     </div>
   </div>
 
   <hr>
 
-  <div class="row justify-content-center" *ngIf="!methodInterval">
+  <div class="row justify-content-center">
     <div class="col-md-4">
       <input type="text" name="" id="" class="form-control-sm form-control" #video>
     </div>
@@ -21,23 +18,20 @@
     </div>
   </div>
 
-  <hr *ngIf="!methodInterval">
+  <hr>
 
   <div class="row">
     <div class="col-md-4">
       <strong>User - 01</strong>
       <hr>
       <ul class="video-list">
-        <li><strong>Video :</strong> Value</li>
+        <li><strong>Video :</strong> {{asyncEmit}}</li>
       </ul>
     </div>
 
     <div class="col-md-4">
       <strong>Click To Complete</strong>
       <hr>
-      <ul class="video-list">
-        <li *ngFor="let item of user2List"><strong>Video :</strong> {{item}}</li>
-      </ul>
       <button class="btn btn-sm btn-success"
         (click)="onComplete()">Complete Subscription</button>
     </div>

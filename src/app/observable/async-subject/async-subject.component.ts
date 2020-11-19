@@ -8,43 +8,20 @@ import { UtilService } from 'src/app/UtilService/util-service.service';
   styleUrls: ['./async-subject.component.sass'],
 })
 export class AsyncSubjectComponent implements OnInit {
-  // subscription
-  subscription2: Subscription;
-  subscription3: Subscription;
-
-  // userList
-  user1List = ['Angular 1', 'Angular 2'];
-  user2List: any = [];
-  user3List: any = [];
-
-  // subscribeMode
-  subscribeMode2: boolean = false;
-  subscribeMode3: boolean = false;
-
-  methodInterval: boolean = false;
-
+  asyncEmit;
   constructor(private _designUtility: UtilService) {}
 
   ngOnInit(): void {
-    this._designUtility.videoEmit.subscribe((res) => {
-      console.log(res);
-      this.user1List.push(res);
+    this._designUtility.asyncEmit.subscribe((res) => {
+      this.asyncEmit = res;
     });
   }
 
   onVideoAdd(video) {
-    this._designUtility.videoEmit.next(video);
+    this._designUtility.asyncEmit.next(video);
   }
 
   onComplete() {
-
-  }
-  
-  toggleMthod() {
-    const broadCastVideo = interval(1000);
-    broadCastVideo.subscribe((res) => {
-      this._designUtility.videoEmit.next('Video ' + res);
-    });
-    this.methodInterval = !this.methodInterval;
+    this._designUtility.asyncEmit.complete();
   }
 }
