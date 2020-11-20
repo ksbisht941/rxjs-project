@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angularguidebook": {
+      "hosting": {
+        "rxjs-tutorial": [
+          "angularguidebook"
+        ]
+      }
+    }
+  }
+}
