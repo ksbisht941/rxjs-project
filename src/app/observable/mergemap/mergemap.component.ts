@@ -10,6 +10,7 @@ export class MergemapComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

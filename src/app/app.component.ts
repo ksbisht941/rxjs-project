@@ -10,8 +10,8 @@ import { UtilService } from './UtilService/util-service.service';
 export class AppComponent implements OnInit {
   title = 'rxjs-tutorial';
   activeRoute: string;
-  rxjsGuideRoute: { topic: string; url: string; type: string; }[];
-  gsapGuideRoute: { topic: string; url: string; type: string; }[];
+  rxjsGuideRoute: { topic: string; url: string; type: string }[];
+  gsapGuideRoute: { topic: string; url: string; type: string }[];
   exclusive: boolean = false;
 
   constructor(private _designUtility: UtilService, private router: Router) {}
@@ -37,16 +37,18 @@ export class AppComponent implements OnInit {
 
         if (this.activeRoute === 'gsap') {
           document.getElementById('main').style.padding = '0';
-          document.querySelector("body").style.overflow = "hidden";
-        } else if (this.activeRoute === 'guide') {
-          document.getElementById('main').style.padding = "1% 1.5em";
-          document.querySelector('body').style.overflow = "unset";
+          document.querySelector('body').style.overflow = 'hidden';
+          console.log('gsap');
+        } else if (this.activeRoute === 'guide' || this.activeRoute === '') {
+          document.getElementById('main').style.padding = '1% 1.5em';
+          document.querySelector('body').style.overflow = 'unset';
+          console.log('guide');
         }
       }
     });
 
-    this._designUtility.exclusive.subscribe(res => {
+    this._designUtility.exclusive.subscribe((res) => {
       this.exclusive = res;
-    })
+    });
   }
 }
