@@ -34,6 +34,8 @@
     "gsap": "^3.5.1",
     "hover-effect": "^1.1.0",
     "rxjs": "~6.5.4",
+    "scrollmagic": "^2.0.8",
+    "scrollmagic-plugin-gsap": "^1.0.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },

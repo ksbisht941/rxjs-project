@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationStart, Router } from '@angular/router';
+import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import { UtilService } from './UtilService/util-service.service';
 
 @Component({
@@ -26,20 +26,32 @@ export class AppComponent implements OnInit {
     this.rxjsGuideRoute = this._designUtility.rxjsGuideRoute;
     this.gsapGuideRoute = this._designUtility.gsapGuideRoute;
 
+    
+    
+    if (this.activeRoute === 'gsap') {
+      document.getElementById('main').style.padding = '0';
+      document.querySelector('body').style.overflow = 'hidden';
+      console.log('gsap');
+    } else if (this.activeRoute === 'guide' || this.activeRoute === '') {
+      document.getElementById('main').style.padding = '1% 1.5em';
+      document.querySelector('body').style.overflow = 'unset';
+      console.log('guide');
+    }
+    
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationStart) {
         let url: string = event.url;
-        let arr = url.split('/');
+        // let arr = url.split('/');
+        
+        // this.activeRoute = arr[1];
+        
+        console.log(url);
 
-        this.activeRoute = arr[1];
-
-        console.log(this.activeRoute);
-
-        if (this.activeRoute === 'gsap') {
+        if (url === '/guide/concatMap-notification' || url === '/gsap/distortion-landing-page') {
           document.getElementById('main').style.padding = '0';
-          document.querySelector('body').style.overflow = 'hidden';
+          document.querySelector('body').style.overflow = 'hidde7n';
           console.log('gsap');
-        } else if (this.activeRoute === 'guide' || this.activeRoute === '') {
+        } else if (url === 'guide' || url === '/') {
           document.getElementById('main').style.padding = '1% 1.5em';
           document.querySelector('body').style.overflow = 'unset';
           console.log('guide');

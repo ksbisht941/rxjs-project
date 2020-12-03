@@ -50,6 +50,10 @@ export class UtilService {
     { topic: 'Concat', url: '/guide/concat', type: 'operator' },
     { topic: 'Merge', url: '/guide/merge', type: 'operator' },
     { topic: 'MergeMap', url: '/guide/mergeMap', type: 'operator' },
+    { topic: 'ConcatMap', url: '/guide/concatMap', type: 'operator' },
+    { topic: 'ConcatMap Mobile Notification UI', url: '/guide/concatMap-notification', type: 'operator' },
+    { topic: 'SwicthMap', url: '/guide/switchMap', type: 'operator' },
+    { topic: 'ExhaustMap', url: '/guide/exhaustMap', type: 'operator' },
   ];
 
   gsapGuideRoute = [
@@ -78,6 +82,14 @@ export class UtilService {
   print(val, containerId) {
     let el = document.createElement('li');
     el.innerText = val;
+
+    document.getElementById(containerId).appendChild(el);
+  }
+
+  printNotification(val, containerId) {
+    let el = document.createElement('li');
+    el.setAttribute('class', 'ios-notifications__item');
+    el.innerHTML = val;
 
     document.getElementById(containerId).appendChild(el);
   }

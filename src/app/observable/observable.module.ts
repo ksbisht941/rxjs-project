@@ -25,6 +25,7 @@ import { ConcatComponent } from './concat/concat.component';
 import { ConcatMapComponent } from './concat-map/concat-map.component';
 import { SwitchMapComponent } from './switch-map/switch-map.component';
 import { ExhaustMapComponent } from './exhaust-map/exhaust-map.component';
+import { ConcatMapNotificationComponent } from './concat-map-notification/concat-map-notification.component';
 
 const routes: Routes = [
   { path: '', component: ObservableComponent },
@@ -45,6 +46,10 @@ const routes: Routes = [
   { path: 'concat', component: ConcatComponent },
   { path: 'merge', component: MergeComponent },
   { path: 'mergeMap', component: MergemapComponent },
+  { path: 'concatMap', component: ConcatMapComponent },
+  { path: 'concatMap-notification', component: ConcatMapNotificationComponent },
+  { path: 'switchMap', component: SwitchMapComponent },
+  { path: 'exhaustMap', component: ExhaustMapComponent },
 ];
 
 @NgModule({
@@ -73,6 +78,7 @@ const routes: Routes = [
     ConcatMapComponent,
     SwitchMapComponent,
     ExhaustMapComponent,
+    ConcatMapNotificationComponent,
   ],
   imports: [CommonModule, RouterModule.forChild(routes)],
 })
